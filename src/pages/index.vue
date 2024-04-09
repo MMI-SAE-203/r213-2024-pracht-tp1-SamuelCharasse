@@ -1,7 +1,11 @@
 <script setup lang="ts">
-//
+import { ref } from 'vue'
+
+const maVar = ref(false)
+console.log('maVar : ', maVar.value)
 </script>
 
 <template>
-  <h1 class="text-2xl">Bonjour monde !</h1>
+  <button @pointerdown="maVar=!maVar">Montrer</button>
+  <h1 v-show="maVar" class="text-2xl">Bonjour monde !</h1>
 </template>
