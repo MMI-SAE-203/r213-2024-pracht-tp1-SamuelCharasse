@@ -25,13 +25,14 @@ const sectionsData = [
       quis corporis et nam.`
     }
   ]
+  import { ref } from 'vue'
+  const sectionOpen = ref(null)
 </script>
 
 <template>
   <h1 class="text-2xl">Bonjour la boucle!</h1>
   <section v-for="({ label, texte }, key) of sectionsData" :key="key">
-    <pre class="font-mono">key : {{ key }}</pre>
-    <pre class="font-mono">label : {{ label }}</pre>
-    <pre class="font-mono">texte : {{ texte }}</pre>
+    <pre class="font-mono" @pointerdown="sectionOpen = sectionOpen === key ? null : key">{{ label }}</pre>
+    <pre class="font-mono" v-show="sectionOpen === key">{{ texte }}</pre>
   </section>
 </template>
