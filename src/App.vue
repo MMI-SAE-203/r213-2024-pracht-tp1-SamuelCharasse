@@ -30,7 +30,7 @@ onErrorCaptured((err, instance, info) => {
       <ul>
         <li><RouterLink to="/">Accueil</RouterLink></li>
         <li><RouterLink to="/accordeon">Accordéon</RouterLink></li>
-        <li><a href="#">item 3</a></li>
+        <li><RouterLink to="/boucle">Boucle</RouterLink></li>
       </ul>
     </nav>
   </Transition>   
